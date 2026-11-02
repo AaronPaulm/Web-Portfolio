@@ -48,6 +48,12 @@
   if (themeToggle) {
     themeToggle.addEventListener("click", function () {
       applyTheme(getTheme() === "dark" ? "light" : "dark");
+      themeToggle.classList.remove("is-spinning");
+      void themeToggle.offsetWidth;
+      themeToggle.classList.add("is-spinning");
+      window.setTimeout(function () {
+        themeToggle.classList.remove("is-spinning");
+      }, 520);
     });
   }
 
@@ -108,6 +114,66 @@
     });
   }
 
+  const imageViewer = document.getElementById("imageViewer");
+  const imageViewerImage = document.getElementById("imageViewerImage");
+  const imageViewerCaption = document.getElementById("imageViewerCaption");
+  const imageViewerClose = document.getElementById("imageViewerClose");
+  const projectImageTriggers = document.querySelectorAll(".project-image-trigger");
+
+  if (imageViewer && imageViewerImage && imageViewerCaption && imageViewerClose) {
+    projectImageTriggers.forEach(function (trigger) {
+      trigger.addEventListener("click", function () {
+        const image = trigger.querySelector("img");
+        if (!image) return;
+
+        imageViewerImage.src = image.currentSrc || image.src;
+        imageViewerImage.alt = image.alt;
+        imageViewerCaption.textContent = image.alt;
+        imageViewer.showModal();
+        imageViewerClose.focus();
+      });
+    });
+
+    imageViewerClose.addEventListener("click", function () {
+      imageViewer.close();
+    });
+
+    imageViewer.addEventListener("click", function (event) {
+      if (event.target === imageViewer) {
+        imageViewer.close();
+      }
+    });
+  }
+
+  const contactForm = document.getElementById("contactForm");
+  const contactFormStatus = document.getElementById("contactFormStatus");
+
+  if (contactForm) {
+    contactForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      if (!contactForm.reportValidity()) return;
+
+      const formData = new FormData(contactForm);
+      const subject = String(formData.get("subject")).trim();
+      const body = [
+        "Name: " + String(formData.get("name")).trim(),
+        "Email: " + String(formData.get("email")).trim(),
+        "",
+        String(formData.get("message")).trim()
+      ].join("\n");
+      const mailto = "mailto:aaronpaulmagdaong2@gmail.com"
+        + "?subject=" + encodeURIComponent(subject)
+        + "&body=" + encodeURIComponent(body);
+
+      if (contactFormStatus) {
+        contactFormStatus.textContent = "If your email app doesn't open, email aaronpaulmagdaong2@gmail.com directly.";
+      }
+
+      window.location.href = mailto;
+    });
+  }
+
   navLinks.forEach(function (link) {
     link.addEventListener("click", function () {
       if (navMenu && navMenu.classList.contains("show") && window.bootstrap) {
@@ -115,30 +181,6 @@
       }
     });
   });
-
-  const hero = document.getElementById("home");
-
-  if (hero && window.matchMedia("(pointer: fine)").matches && !prefersReducedMotion) {
-    let spotlightFrame = null;
-
-    hero.addEventListener("pointermove", function (event) {
-      if (spotlightFrame) return;
-
-      spotlightFrame = requestAnimationFrame(function () {
-        const rect = hero.getBoundingClientRect();
-        const x = ((event.clientX - rect.left) / rect.width) * 100;
-        const y = ((event.clientY - rect.top) / rect.height) * 100;
-        hero.style.setProperty("--mx", x.toFixed(2) + "%");
-        hero.style.setProperty("--my", y.toFixed(2) + "%");
-        spotlightFrame = null;
-      });
-    });
-
-    hero.addEventListener("pointerleave", function () {
-      hero.style.removeProperty("--mx");
-      hero.style.removeProperty("--my");
-    });
-  }
 
   const revealElements = document.querySelectorAll(".reveal");
 
@@ -217,118 +259,4 @@
     });
   }
 
-  const typedRole = document.getElementById("typedRole");
-  const roles = ["BSIT Student", "Aspiring Web Developer", "Front-End Enthusiast", "Problem Solver"];
-
-  if (typedRole) {
-    if (prefersReducedMotion) {
-      typedRole.textContent = roles[0];
-    } else {
-      let roleIndex = 0;
-      let charIndex = roles[0].length;
-      let deleting = false;
-
-      function typeLoop() {
-        const current = roles[roleIndex];
-        let delay = deleting ? 45 : 85;
-
-        if (deleting) {
-          charIndex--;
-        } else {
-          charIndex++;
-        }
-
-        typedRole.textContent = current.slice(0, charIndex);
-
-        if (!deleting && charIndex === current.length) {
-          deleting = true;
-          delay = 1900;
-        } else if (deleting && charIndex === 0) {
-          deleting = false;
-          roleIndex = (roleIndex + 1) % roles.length;
-          delay = 350;
-        }
-
-        window.setTimeout(typeLoop, delay);
-      }
-
-      window.setTimeout(function () {
-        deleting = true;
-        typeLoop();
-      }, 2200);
-    }
-  }
-
-  const contactForm = document.getElementById("contactForm");
-  const toast = document.getElementById("toast");
-  const toastMessage = document.getElementById("toastMessage");
-  const toastIcon = toast ? toast.querySelector("i") : null;
-  let toastTimer;
-
-  function showToast(message, isError) {
-    if (!toast || !toastMessage) return;
-
-    toastMessage.textContent = message;
-    toast.classList.add("show");
-
-    if (toastIcon) {
-      toastIcon.className = isError ? "bi bi-exclamation-circle-fill" : "bi bi-check-circle-fill";
-      toastIcon.style.color = isError ? "#f87171" : "";
-    }
-
-    window.clearTimeout(toastTimer);
-    toastTimer = window.setTimeout(function () {
-      toast.classList.remove("show");
-    }, 4200);
-  }
-
-  if (contactForm) {
-    const fields = Array.from(contactForm.querySelectorAll("input, textarea"));
-
-    fields.forEach(function (field) {
-      field.addEventListener("input", function () {
-        field.classList.remove("is-invalid");
-      });
-    });
-
-    contactForm.addEventListener("submit", function (event) {
-      event.preventDefault();
-
-      let isValid = true;
-
-      fields.forEach(function (field) {
-        if (!field.checkValidity()) {
-          field.classList.add("is-invalid");
-          isValid = false;
-        } else {
-          field.classList.remove("is-invalid");
-        }
-      });
-
-      if (!isValid) {
-        const firstInvalid = contactForm.querySelector(".is-invalid");
-        if (firstInvalid) firstInvalid.focus();
-        showToast("Please complete the highlighted fields.", true);
-        return;
-      }
-
-      const name = document.getElementById("name").value.trim();
-      const email = document.getElementById("email").value.trim();
-      const subject = document.getElementById("subject").value.trim();
-      const message = document.getElementById("message").value.trim();
-
-      const body = "Name: " + name + "\nEmail: " + email + "\n\n" + message;
-      const mailtoLink =
-        "mailto:hello@example.com" +
-        "?subject=" + encodeURIComponent(subject) +
-        "&body=" + encodeURIComponent(body);
-
-      showToast("Opening your email app to send the message...", false);
-
-      window.setTimeout(function () {
-        window.location.href = mailtoLink;
-        contactForm.reset();
-      }, 600);
-    });
-  }
 })();
