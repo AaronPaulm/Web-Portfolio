@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio of Your Name — BSIT student and aspiring web developer building clean, responsive web experiences.">
+  <meta name="author" content="Your Name">
+  <meta name="theme-color" content="#F4F7FB">
+  <title>Your Name | BSIT Student & Web Developer</title>
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230F172A'/%3E%3Cpath d='M30 30l20 24 20-24M50 54v18' stroke='%2338BDF8' stroke-width='9' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E">
+
+  <script>
+    (function () {
+      document.documentElement.classList.add("js");
+      try {
+        var saved = localStorage.getItem("portfolio-theme");
+        var theme = saved === "dark" || saved === "light" ? saved : "light";
+        document.documentElement.setAttribute("data-theme", theme);
+        document.documentElement.setAttribute("data-bs-theme", theme);
+      } catch (error) {
+        document.documentElement.setAttribute("data-theme", "light");
+        document.documentElement.setAttribute("data-bs-theme", "light");
+      }
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="assets/css/style.css" rel="stylesheet">
+</head>
+<body>
+  <a class="skip-link" href="#home">Skip to content</a>
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <nav class="navbar navbar-expand-lg fixed-top site-nav" id="siteNav" aria-label="Main navigation">
+    <div class="container">
+      <a class="navbar-brand" href="#home">
+        <span class="brand-mark">&lt;/&gt;</span>
+        <span class="brand-text">yourname<span class="text-accent">.dev</span></span>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="toggler-bar"></span>
+        <span class="toggler-bar"></span>
+        <span class="toggler-bar"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+          <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          <li class="nav-item nav-tools ms-lg-3">
+            <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark mode" title="Switch theme">
+              <i class="bi bi-moon-stars-fill icon-moon" aria-hidden="true"></i>
+              <i class="bi bi-sun-fill icon-sun" aria-hidden="true"></i>
+            </button>
+            <a class="btn btn-accent btn-sm nav-cta" href="Resume.pdf" target="_blank" rel="noopener">
+              <i class="bi bi-file-earmark-arrow-down me-1"></i>Resume
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="orb orb-one" aria-hidden="true"></div>
+      <div class="orb orb-two" aria-hidden="true"></div>
+      <div class="hero-grid-bg" aria-hidden="true"></div>
+
+      <div class="container position-relative">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6">
+            <p class="hero-eyebrow reveal">
+              <span class="status-dot"></span> Available for internships &amp; projects
+            </p>
+            <h1 class="hero-title reveal">
+              Hello, I'm <span class="text-gradient">Your Name</span>
+            </h1>
+            <h2 class="hero-role reveal">
+              <span id="typedRole">BSIT Student</span><span class="caret" aria-hidden="true"></span>
+            </h2>
+            <p class="hero-text reveal">
+              An aspiring web developer who enjoys turning ideas into clean, responsive,
+              and user-focused digital experiences. Currently building real-world systems
+              while learning something new every day.
+            </p>
+            <div class="hero-actions reveal">
+              <a href="#projects" class="btn btn-accent">
+                View My Work <i class="bi bi-arrow-down-right ms-1"></i>
+              </a>
+              <a href="Resume.pdf" class="btn btn-ghost" target="_blank" rel="noopener">
+                <i class="bi bi-download me-1"></i> Download CV
+              </a>
+            </div>
+            <div class="hero-socials reveal">
+              <span class="social-label">Find me on</span>
+              <a href="https://github.com/yourusername" target="_blank" rel="noopener" aria-label="GitHub"><i class="bi bi-github"></i></a>
+              <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+              <a href="mailto:hello@example.com" aria-label="Email"><i class="bi bi-envelope"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="hero-visual reveal">
+              <div class="code-card">
+                <div class="code-topbar">
+                  <div class="window-dots" aria-hidden="true">
+                    <span></span><span></span><span></span>
+                  </div>
+                  <span class="code-filename"><i class="bi bi-filetype-js me-1"></i>developer.js</span>
+                </div>
+                <pre class="code-body" aria-label="Sample developer profile code"><code><span class="c-key">const</span> <span class="c-var">developer</span> <span class="c-op">=</span> <span class="c-brace">{</span>
+  <span class="c-prop">name</span><span class="c-op">:</span> <span class="c-str">"Your Name"</span><span class="c-op">,</span>
+  <span class="c-prop">role</span><span class="c-op">:</span> <span class="c-str">"BSIT Student"</span><span class="c-op">,</span>
+  <span class="c-prop">focus</span><span class="c-op">:</span> <span class="c-str">"Web Development"</span><span class="c-op">,</span>
+  <span class="c-prop">stack</span><span class="c-op">:</span> <span class="c-brace">[</span><span class="c-str">"HTML"</span><span class="c-op">,</span> <span class="c-str">"CSS"</span><span class="c-op">,</span> <span class="c-str">"JS"</span><span class="c-op">,</span> <span class="c-str">"PHP"</span><span class="c-brace">]</span><span class="c-op">,</span>
+  <span class="c-fn">learning</span><span class="c-op">()</span> <span class="c-brace">{</span>
+    <span class="c-key">return</span> <span class="c-str">"Always building."</span><span class="c-op">;</span>
+  <span class="c-brace">}</span>
+<span class="c-brace">}</span><span class="c-op">;</span></code></pre>
+              </div>
+
+              <div class="float-badge badge-top">
+                <i class="bi bi-phone"></i>
+                <span>Responsive UI</span>
+              </div>
+              <div class="float-badge badge-bottom">
+                <i class="bi bi-code-slash"></i>
+                <span>Clean Code</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <a href="#about" class="scroll-hint" aria-label="Scroll to about section">
+          <span class="mouse"><span class="wheel"></span></span>
+          <span>Scroll to explore</span>
+        </a>
+      </div>
+    </section>
+
+    <div class="tech-band" aria-label="Technologies I work with">
+      <div class="tech-track">
+        <div class="tech-group">
+          <span class="tech-item"><i class="bi bi-filetype-html"></i>HTML5</span>
+          <span class="tech-item"><i class="bi bi-filetype-css"></i>CSS3</span>
+          <span class="tech-item"><i class="bi bi-filetype-js"></i>JavaScript</span>
+          <span class="tech-item"><i class="bi bi-bootstrap"></i>Bootstrap</span>
+          <span class="tech-item"><i class="bi bi-filetype-php"></i>PHP</span>
+          <span class="tech-item"><i class="bi bi-database"></i>MySQL</span>
+          <span class="tech-item"><i class="bi bi-git"></i>Git</span>
+          <span class="tech-item"><i class="bi bi-github"></i>GitHub</span>
+          <span class="tech-item"><i class="bi bi-figma"></i>Figma</span>
+          <span class="tech-item"><i class="bi bi-window-stack"></i>Responsive UI</span>
+        </div>
+        <div class="tech-group" aria-hidden="true">
+          <span class="tech-item"><i class="bi bi-filetype-html"></i>HTML5</span>
+          <span class="tech-item"><i class="bi bi-filetype-css"></i>CSS3</span>
+          <span class="tech-item"><i class="bi bi-filetype-js"></i>JavaScript</span>
+          <span class="tech-item"><i class="bi bi-bootstrap"></i>Bootstrap</span>
+          <span class="tech-item"><i class="bi bi-filetype-php"></i>PHP</span>
+          <span class="tech-item"><i class="bi bi-database"></i>MySQL</span>
+          <span class="tech-item"><i class="bi bi-git"></i>Git</span>
+          <span class="tech-item"><i class="bi bi-github"></i>GitHub</span>
+          <span class="tech-item"><i class="bi bi-figma"></i>Figma</span>
+          <span class="tech-item"><i class="bi bi-window-stack"></i>Responsive UI</span>
+        </div>
+      </div>
+    </div>
+
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="section-eyebrow"><span class="eyebrow-num">01.</span> About Me</p>
+          <h2 class="section-title">A developer in the making.</h2>
+        </div>
+
+        <div class="row g-5 align-items-start">
+          <div class="col-lg-7">
+            <div class="about-copy reveal">
+              <p>
+                I'm a <strong>Bachelor of Science in Information Technology</strong> student
+                with a strong interest in web development and software design. I enjoy
+                turning ideas into functional, accessible, and visually engaging websites.
+              </p>
+              <p>
+                My experience includes building academic and personal projects using
+                <span class="text-accent">HTML, CSS, JavaScript, PHP, and MySQL</span>.
+                I'm currently focused on strengthening my front-end skills and learning
+                how to build systems that are both useful and easy to use.
+              </p>
+              <p>
+                When I'm not coding, you'll usually find me exploring new tools,
+                polishing my UI design sense, or working on my capstone project.
+              </p>
+            </div>
+
+            <div class="quick-facts reveal">
+              <div class="fact">
+                <i class="bi bi-geo-alt"></i>
+                <div><span>Location</span><strong>Philippines</strong></div>
+              </div>
+              <div class="fact">
+                <i class="bi bi-mortarboard"></i>
+                <div><span>Education</span><strong>BS Information Technology</strong></div>
+              </div>
+              <div class="fact">
+                <i class="bi bi-briefcase"></i>
+                <div><span>Availability</span><strong>Open to internships</strong></div>
+              </div>
+              <div class="fact">
+                <i class="bi bi-lightning-charge"></i>
+                <div><span>Focus</span><strong>Web Development</strong></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-5">
+            <div class="stats-card reveal">
+              <div class="stat">
+                <span class="stat-num" data-count="4">0</span>
+                <span class="stat-label">Projects Built</span>
+              </div>
+              <div class="stat">
+                <span class="stat-num" data-count="10">0</span>
+                <span class="stat-label">Technologies Used</span>
+              </div>
+              <div class="stat">
+                <span class="stat-num" data-count="1">0</span>
+                <span class="stat-label">Capstone System</span>
+              </div>
+              <div class="stat">
+                <span class="stat-num">∞</span>
+                <span class="stat-label">Curiosity</span>
+              </div>
+              <div class="stats-glow" aria-hidden="true"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="skills">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="section-eyebrow"><span class="eyebrow-num">02.</span> Skills</p>
+          <h2 class="section-title">Tools I use to build the web.</h2>
+          <p class="section-sub">A growing toolkit shaped by coursework, projects, and self-study.</p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-4">
+            <article class="skill-card reveal">
+              <div class="skill-icon"><i class="bi bi-window-stack"></i></div>
+              <h3>Frontend</h3>
+              <p>Building responsive interfaces with a focus on clarity and usability.</p>
+              <div class="tag-list">
+                <span class="tag">HTML5</span>
+                <span class="tag">CSS3</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">Bootstrap</span>
+                <span class="tag">Responsive Design</span>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            <article class="skill-card reveal">
+              <div class="skill-icon"><i class="bi bi-server"></i></div>
+              <h3>Backend &amp; Database</h3>
+              <p>Creating functional server-side logic and organized data structures.</p>
+              <div class="tag-list">
+                <span class="tag">PHP</span>
+                <span class="tag">MySQL</span>
+                <span class="tag">CRUD</span>
+                <span class="tag">REST APIs</span>
+                <span class="tag">Authentication</span>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            <article class="skill-card reveal">
+              <div class="skill-icon"><i class="bi bi-tools"></i></div>
+              <h3>Tools &amp; Workflow</h3>
+              <p>Using modern tools to write, test, and ship projects efficiently.</p>
+              <div class="tag-list">
+                <span class="tag">Git</span>
+                <span class="tag">GitHub</span>
+                <span class="tag">VS Code</span>
+                <span class="tag">Figma</span>
+                <span class="tag">XAMPP</span>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="skill-meters reveal">
+          <div class="meter-item">
+            <div class="meter-head"><span>HTML &amp; CSS</span><span>Advanced</span></div>
+            <div class="meter"><span style="--level: 88%"></span></div>
+          </div>
+          <div class="meter-item">
+            <div class="meter-head"><span>JavaScript</span><span>Intermediate</span></div>
+            <div class="meter"><span style="--level: 72%"></span></div>
+          </div>
+          <div class="meter-item">
+            <div class="meter-head"><span>PHP &amp; MySQL</span><span>Intermediate</span></div>
+            <div class="meter"><span style="--level: 68%"></span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="education">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="section-eyebrow"><span class="eyebrow-num">03.</span> Education</p>
+          <h2 class="section-title">The path so far.</h2>
+        </div>
+
+        <div class="timeline">
+          <article class="timeline-item reveal">
+            <div class="timeline-dot"><i class="bi bi-mortarboard-fill"></i></div>
+            <div class="timeline-card">
+              <span class="timeline-badge">Present</span>
+              <span class="timeline-date">2022 — Present</span>
+              <h3>BS in Information Technology</h3>
+              <p class="timeline-place">Your University</p>
+              <p>
+                Focused on web development, database management, and software
+                engineering. Currently developing a guidance management system
+                as my capstone project.
+              </p>
+              <div class="tag-list">
+                <span class="tag">Web Development</span>
+                <span class="tag">Databases</span>
+                <span class="tag">Software Design</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="timeline-item reveal">
+            <div class="timeline-dot"><i class="bi bi-pc-display"></i></div>
+            <div class="timeline-card">
+              <span class="timeline-date">2020 — 2022</span>
+              <h3>Senior High School — ICT Strand</h3>
+              <p class="timeline-place">Your Senior High School</p>
+              <p>
+                Built a foundation in programming, networking, and computer systems
+                while completing hands-on ICT projects and presentations.
+              </p>
+              <div class="tag-list">
+                <span class="tag">Programming</span>
+                <span class="tag">Networking</span>
+                <span class="tag">Computer Systems</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="timeline-item reveal">
+            <div class="timeline-dot"><i class="bi bi-book"></i></div>
+            <div class="timeline-card">
+              <span class="timeline-date">2016 — 2020</span>
+              <h3>Junior High School</h3>
+              <p class="timeline-place">Your School</p>
+              <p>
+                Discovered an early interest in technology through computer classes,
+                simple coding exercises, and school-based digital projects.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="projects">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="section-eyebrow"><span class="eyebrow-num">04.</span> Projects</p>
+          <h2 class="section-title">Things I've built.</h2>
+          <p class="section-sub">A selection of academic and personal work that shows how I approach real problems.</p>
+        </div>
+
+        <article class="featured-project reveal">
+          <div class="row g-0 align-items-stretch">
+            <div class="col-lg-6">
+              <div class="project-mock" aria-hidden="true">
+                <div class="mock-window">
+                  <div class="mock-topbar">
+                    <span></span><span></span><span></span>
+                    <em>colmsystem.local/dashboard</em>
+                  </div>
+                  <div class="mock-body">
+                    <aside class="mock-side">
+                      <i class="bi bi-grid-1x2-fill"></i>
+                      <i class="bi bi-people"></i>
+                      <i class="bi bi-calendar-event"></i>
+                      <i class="bi bi-bar-chart"></i>
+                      <i class="bi bi-gear"></i>
+                    </aside>
+                    <div class="mock-main">
+                      <div class="mock-title-row">
+                        <div>
+                          <strong>Guidance Dashboard</strong>
+                          <span>Overview of student records</span>
+                        </div>
+                        <i class="bi bi-bell"></i>
+                      </div>
+                      <div class="mock-stats">
+                        <div><span></span><b>Students</b></div>
+                        <div><span></span><b>Appointments</b></div>
+                        <div><span></span><b>Reports</b></div>
+                      </div>
+                      <div class="mock-chart">
+                        <span style="--h: 40%"></span>
+                        <span style="--h: 65%"></span>
+                        <span style="--h: 52%"></span>
+                        <span style="--h: 80%"></span>
+                        <span style="--h: 68%"></span>
+                        <span style="--h: 92%"></span>
+                      </div>
+                      <div class="mock-rows">
+                        <span></span><span></span><span></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-6">
+              <div class="featured-content">
+                <span class="project-flag"><i class="bi bi-star-fill me-1"></i> Featured · Capstone Project</span>
+                <h3>COLM Guidance Management System</h3>
+                <p>
+                  A web-based guidance management system designed to help COLM
+                  streamline student records, counseling appointments, and guidance
+                  reports through a clean, role-based interface.
+                </p>
+                <ul class="feature-list">
+                  <li><i class="bi bi-check2"></i> Student records management</li>
+                  <li><i class="bi bi-check2"></i> Counseling appointment scheduling</li>
+                  <li><i class="bi bi-check2"></i> Guidance reports and analytics</li>
+                  <li><i class="bi bi-check2"></i> Role-based access control</li>
+                </ul>
+                <div class="tag-list">
+                  <span class="tag">PHP</span>
+                  <span class="tag">MySQL</span>
+                  <span class="tag">Bootstrap</span>
+                  <span class="tag">JavaScript</span>
+                </div>
+                <div class="project-actions">
+                  <a href="https://your-demo-link.com" target="_blank" rel="noopener" class="btn btn-accent btn-sm">
+                    <i class="bi bi-box-arrow-up-right me-1"></i> Live Demo
+                  </a>
+                  <a href="https://github.com/yourusername" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">
+                    <i class="bi bi-github me-1"></i> Source Code
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <div class="row g-4 mt-1">
+          <div class="col-md-6">
+            <article class="project-card reveal">
+              <div class="project-card-visual visual-portfolio">
+                <i class="bi bi-braces"></i>
+                <span class="visual-glow" aria-hidden="true"></span>
+              </div>
+              <div class="project-card-body">
+                <div class="project-card-head">
+                  <h3>Personal Portfolio</h3>
+                  <span class="project-status">Live</span>
+                </div>
+                <p>The responsive portfolio you're viewing — built to showcase my skills, education, and projects.</p>
+                <div class="tag-list">
+                  <span class="tag">HTML</span>
+                  <span class="tag">CSS</span>
+                  <span class="tag">JavaScript</span>
+                  <span class="tag">Bootstrap</span>
+                </div>
+                <div class="project-links">
+                  <a href="https://github.com/yourusername" target="_blank" rel="noopener"><i class="bi bi-github"></i> Source</a>
+                  <a href="#home"><i class="bi bi-box-arrow-up-right"></i> Preview</a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6">
+            <article class="project-card reveal">
+              <div class="project-card-visual visual-tracker">
+                <i class="bi bi-kanban"></i>
+                <span class="visual-glow" aria-hidden="true"></span>
+              </div>
+              <div class="project-card-body">
+                <div class="project-card-head">
+                  <h3>Student Task Tracker</h3>
+                  <span class="project-status status-wip">In Progress</span>
+                </div>
+                <p>A lightweight task manager for students to organize deadlines, subjects, and priorities.</p>
+                <div class="tag-list">
+                  <span class="tag">JavaScript</span>
+                  <span class="tag">Local Storage</span>
+                  <span class="tag">Bootstrap</span>
+                </div>
+                <div class="project-links">
+                  <a href="https://github.com/yourusername" target="_blank" rel="noopener"><i class="bi bi-github"></i> Source</a>
+                  <a href="#" aria-disabled="true"><i class="bi bi-clock"></i> Coming soon</a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="section-eyebrow"><span class="eyebrow-num">05.</span> Contact</p>
+          <h2 class="section-title">Let's build something together.</h2>
+          <p class="section-sub">
+            I'm currently open to internships, freelance projects, and collaboration.
+            Feel free to reach out — I'd love to hear from you.
+          </p>
+        </div>
+
+        <div class="row g-4 g-lg-5">
+          <div class="col-lg-5">
+            <div class="contact-info reveal">
+              <a class="contact-item" href="mailto:hello@example.com">
+                <span class="contact-icon"><i class="bi bi-envelope"></i></span>
+                <span><small>Email</small><strong>hello@example.com</strong></span>
+                <i class="bi bi-arrow-up-right contact-arrow"></i>
+              </a>
+              <div class="contact-item">
+                <span class="contact-icon"><i class="bi bi-geo-alt"></i></span>
+                <span><small>Location</small><strong>Philippines</strong></span>
+              </div>
+              <a class="contact-item" href="https://github.com/yourusername" target="_blank" rel="noopener">
+                <span class="contact-icon"><i class="bi bi-github"></i></span>
+                <span><small>GitHub</small><strong>github.com/yourusername</strong></span>
+                <i class="bi bi-arrow-up-right contact-arrow"></i>
+              </a>
+              <a class="contact-item" href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener">
+                <span class="contact-icon"><i class="bi bi-linkedin"></i></span>
+                <span><small>LinkedIn</small><strong>linkedin.com/in/yourusername</strong></span>
+                <i class="bi bi-arrow-up-right contact-arrow"></i>
+              </a>
+
+              <div class="resume-box">
+                <div>
+                  <i class="bi bi-file-earmark-pdf"></i>
+                  <div><strong>My Resume</strong><small>Updated 2026 · PDF</small></div>
+                </div>
+                <a href="Resume.pdf" target="_blank" rel="noopener" class="btn btn-accent btn-sm">
+                  <i class="bi bi-download me-1"></i> Download
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-7">
+            <form class="contact-form reveal" id="contactForm" novalidate>
+              <div class="row g-3">
+                <div class="col-sm-6">
+                  <label for="name" class="form-label">Your Name</label>
+                  <input type="text" class="form-control" id="name" name="name" placeholder="Juan Dela Cruz" required>
+                  <div class="invalid-feedback">Please enter your name.</div>
+                </div>
+                <div class="col-sm-6">
+                  <label for="email" class="form-label">Email Address</label>
+                  <input type="email" class="form-control" id="email" name="email" placeholder="you@example.com" required>
+                  <div class="invalid-feedback">Please enter a valid email.</div>
+                </div>
+                <div class="col-12">
+                  <label for="subject" class="form-label">Subject</label>
+                  <input type="text" class="form-control" id="subject" name="subject" placeholder="Internship opportunity" required>
+                  <div class="invalid-feedback">Please add a subject.</div>
+                </div>
+                <div class="col-12">
+                  <label for="message" class="form-label">Message</label>
+                  <textarea class="form-control" id="message" name="message" rows="5" placeholder="Tell me a little about your project or opportunity..." required></textarea>
+                  <div class="invalid-feedback">Please write a short message.</div>
+                </div>
+                <div class="col-12 d-flex flex-wrap align-items-center gap-3">
+                  <button type="submit" class="btn btn-accent">
+                    <i class="bi bi-send me-1"></i> Send Message
+                  </button>
+                  <span class="form-note"><i class="bi bi-shield-check me-1"></i>Your details stay private.</span>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a class="navbar-brand" href="#home">
+            <span class="brand-mark">&lt;/&gt;</span>
+            <span class="brand-text">yourname<span class="text-accent">.dev</span></span>
+          </a>
+          <p>BSIT student &amp; aspiring web developer crafting clean and thoughtful digital experiences.</p>
+        </div>
+
+        <div class="footer-nav">
+          <h4>Navigate</h4>
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#education">Education</a>
+          <a href="#projects">Projects</a>
+        </div>
+
+        <div class="footer-nav">
+          <h4>Connect</h4>
+          <a href="https://github.com/yourusername" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="mailto:hello@example.com">Email</a>
+          <a href="Resume.pdf" target="_blank" rel="noopener">Resume</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; <span id="year">2026</span> Your Name. All rights reserved.</p>
+        <p class="footer-built">Designed &amp; built with <i class="bi bi-heart-fill text-accent"></i> using Bootstrap.</p>
+      </div>
+    </div>
+  </footer>
+
+  <button class="to-top" id="toTop" aria-label="Back to top">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+
+  <div class="toast-wrap" id="toast" role="status" aria-live="polite">
+    <i class="bi bi-check-circle-fill"></i>
+    <span id="toastMessage">Message ready to send!</span>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
