@@ -46,22 +46,8 @@
   updateThemeControls(getTheme());
 
   if (themeToggle) {
-    themeToggle.addEventListener("click", function (event) {
-      const nextTheme = getTheme() === "dark" ? "light" : "dark";
-      const rect = themeToggle.getBoundingClientRect();
-      const x = event.clientX || rect.left + rect.width / 2;
-      const y = event.clientY || rect.top + rect.height / 2;
-
-      document.documentElement.style.setProperty("--theme-x", x + "px");
-      document.documentElement.style.setProperty("--theme-y", y + "px");
-
-      if (document.startViewTransition && !prefersReducedMotion) {
-        document.startViewTransition(function () {
-          applyTheme(nextTheme);
-        });
-      } else {
-        applyTheme(nextTheme);
-      }
+    themeToggle.addEventListener("click", function () {
+      applyTheme(getTheme() === "dark" ? "light" : "dark");
     });
   }
 
