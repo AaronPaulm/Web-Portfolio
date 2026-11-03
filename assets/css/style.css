@@ -124,18 +124,15 @@ a:hover {
 
 /* ---------- Navigation ---------- */
 .site-nav {
+  background: #ffffff;
   padding: 20px 0;
-  transition: padding 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, backdrop-filter 0.3s ease;
-  border-bottom: 1px solid transparent;
+  transition: padding 0.3s ease;
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 8px 24px -22px rgba(15, 23, 42, 0.28);
 }
 
 .site-nav.scrolled {
   padding: 12px 0;
-  background: rgba(15, 23, 42, 0.82);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-bottom-color: var(--border);
-  box-shadow: 0 12px 40px -24px rgba(2, 6, 23, 0.9);
 }
 
 .navbar-brand {
@@ -643,7 +640,7 @@ a:hover {
 .about-copy p {
   font-size: 1.02rem;
   line-height: 1.85;
-  color: #b7c3d3;
+  color: #475569;
 }
 
 .about-copy p + p {
@@ -668,8 +665,9 @@ a:hover {
   gap: 14px;
   padding: 16px;
   border-radius: 14px;
-  background: rgba(30, 41, 59, 0.45);
+  background: #ffffff;
   border: 1px solid var(--border);
+  box-shadow: 0 12px 28px -24px rgba(15, 23, 42, 0.35);
   transition: border-color 0.2s ease;
 }
 
@@ -694,7 +692,7 @@ a:hover {
   font-size: 0.72rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #8494ab;
+  color: #64748b;
 }
 
 .fact strong {
@@ -709,8 +707,9 @@ a:hover {
   margin-top: 28px;
   padding: 20px 22px;
   border-radius: 16px;
-  background: rgba(30, 41, 59, 0.38);
+  background: #ffffff;
   border: 1px solid var(--border);
+  box-shadow: 0 12px 28px -24px rgba(15, 23, 42, 0.35);
 }
 
 .about-hobbies h3 {
@@ -780,7 +779,7 @@ a:hover {
   height: 100%;
   padding: 28px;
   border-radius: 12px;
-  background: var(--card-soft);
+  background: #ffffff;
   border: 1px solid var(--border);
   transition: border-color 0.2s ease, background-color 0.2s ease;
 }
@@ -1912,9 +1911,9 @@ a:hover {
 }
 
 [data-theme="light"] .site-nav.scrolled {
-  background: rgba(244, 247, 251, 0.86);
+  background: #ffffff;
   border-bottom-color: var(--border);
-  box-shadow: 0 12px 40px -30px rgba(15, 23, 42, 0.35);
+  box-shadow: 0 8px 24px -22px rgba(15, 23, 42, 0.28);
 }
 
 [data-theme="light"] .navbar-toggler {
@@ -1994,7 +1993,7 @@ a:hover {
 }
 
 [data-theme="light"] .fact {
-  background: rgba(255, 255, 255, 0.82);
+  background: #ffffff;
   box-shadow: 0 16px 34px -30px rgba(15, 23, 42, 0.4);
 }
 
@@ -2003,7 +2002,7 @@ a:hover {
 }
 
 [data-theme="light"] .about-hobbies {
-  background: rgba(255, 255, 255, 0.82);
+  background: #ffffff;
   box-shadow: 0 16px 34px -30px rgba(15, 23, 42, 0.4);
 }
 
@@ -2061,7 +2060,7 @@ a:hover {
 }
 
 [data-theme="light"] .project-card {
-  background: rgba(255, 255, 255, 0.86);
+  background: #ffffff;
   box-shadow: 0 20px 44px -38px rgba(15, 23, 42, 0.45);
 }
 
@@ -2086,12 +2085,12 @@ a:hover {
 }
 
 [data-theme="light"] .contact-item {
-  background: rgba(255, 255, 255, 0.84);
+  background: #ffffff;
   box-shadow: 0 16px 34px -32px rgba(15, 23, 42, 0.4);
 }
 
 [data-theme="light"] .contact-item:hover {
-  background: #ffffff;
+  background: #f8fafd;
 }
 
 [data-theme="light"] .contact-item small {
@@ -2183,14 +2182,9 @@ a:hover {
   .navbar-collapse {
     margin-top: 14px;
     padding: 14px;
-    background: rgba(17, 28, 49, 0.98);
+    background: rgba(255, 255, 255, 0.98);
     border: 1px solid var(--border);
     border-radius: 16px;
-    box-shadow: 0 30px 60px -30px rgba(2, 6, 23, 1);
-  }
-
-  [data-theme="light"] .navbar-collapse {
-    background: rgba(255, 255, 255, 0.98);
     box-shadow: 0 30px 60px -38px rgba(15, 23, 42, 0.35);
   }
 
