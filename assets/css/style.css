@@ -1,19 +1,19 @@
 :root {
-  --bg: #0f172a;
-  --bg-deep: #0b1220;
-  --card: #1e293b;
-  --card-soft: rgba(30, 41, 59, 0.55);
-  --accent: #38bdf8;
-  --accent-strong: #0ea5e9;
-  --accent-bright: #a5f3fc;
-  --accent-soft: rgba(56, 189, 248, 0.12);
-  --text: #e2e8f0;
-  --muted: #94a3b8;
-  --muted-strong: #cbd5e1;
-  --border: rgba(148, 163, 184, 0.14);
-  --border-strong: rgba(56, 189, 248, 0.35);
+  --bg: #f4f7fb;
+  --bg-deep: #e9f0f7;
+  --card: #ffffff;
+  --card-soft: rgba(255, 255, 255, 0.8);
+  --accent: #0369a1;
+  --accent-strong: #075985;
+  --accent-bright: #0ea5e9;
+  --accent-soft: rgba(2, 132, 199, 0.09);
+  --text: #0f172a;
+  --muted: #5b6b80;
+  --muted-strong: #334155;
+  --border: rgba(15, 23, 42, 0.1);
+  --border-strong: rgba(3, 105, 161, 0.32);
   --radius: 18px;
-  --shadow: 0 24px 60px -20px rgba(2, 6, 23, 0.75);
+  --shadow: 0 24px 60px -30px rgba(15, 23, 42, 0.22);
   --font-heading: "Space Grotesk", "Segoe UI", sans-serif;
   --font-body: "Inter", "Segoe UI", sans-serif;
   --font-mono: "SFMono-Regular", "Cascadia Code", Consolas, "Liberation Mono", monospace;
@@ -703,6 +703,31 @@ a:hover {
   font-weight: 600;
   color: var(--muted-strong);
   line-height: 1.4;
+}
+
+.about-hobbies {
+  margin-top: 28px;
+  padding: 20px 22px;
+  border-radius: 16px;
+  background: rgba(30, 41, 59, 0.38);
+  border: 1px solid var(--border);
+}
+
+.about-hobbies h3 {
+  margin: 0 0 14px;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.hobby-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.hobby-tags .tag {
+  padding-inline: 11px;
 }
 
 .stats-card {
@@ -1975,6 +2000,11 @@ a:hover {
 
 [data-theme="light"] .fact:hover {
   background: #ffffff;
+}
+
+[data-theme="light"] .about-hobbies {
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow: 0 16px 34px -30px rgba(15, 23, 42, 0.4);
 }
 
 [data-theme="light"] .fact span {

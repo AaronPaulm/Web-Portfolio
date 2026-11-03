@@ -9,52 +9,9 @@
   const progressBar = document.getElementById("scrollProgress");
   const toTop = document.getElementById("toTop");
   const year = document.getElementById("year");
-  const themeToggle = document.getElementById("themeToggle");
-  const themeColorMeta = document.querySelector('meta[name="theme-color"]');
 
   if (year) {
     year.textContent = new Date().getFullYear();
-  }
-
-  function getTheme() {
-    return document.documentElement.getAttribute("data-theme") === "dark" ? "dark" : "light";
-  }
-
-  function updateThemeControls(theme) {
-    if (!themeToggle) return;
-
-    const target = theme === "dark" ? "light" : "dark";
-    themeToggle.setAttribute("aria-label", "Switch to " + target + " mode");
-    themeToggle.setAttribute("title", "Switch to " + target + " mode");
-    themeToggle.setAttribute("aria-pressed", theme === "dark" ? "true" : "false");
-  }
-
-  function applyTheme(theme) {
-    document.documentElement.setAttribute("data-theme", theme);
-    document.documentElement.setAttribute("data-bs-theme", theme);
-    updateThemeControls(theme);
-
-    if (themeColorMeta) {
-      themeColorMeta.setAttribute("content", theme === "dark" ? "#0F172A" : "#F4F7FB");
-    }
-
-    try {
-      localStorage.setItem("portfolio-theme", theme);
-    } catch (error) {}
-  }
-
-  updateThemeControls(getTheme());
-
-  if (themeToggle) {
-    themeToggle.addEventListener("click", function () {
-      applyTheme(getTheme() === "dark" ? "light" : "dark");
-      themeToggle.classList.remove("is-spinning");
-      void themeToggle.offsetWidth;
-      themeToggle.classList.add("is-spinning");
-      window.setTimeout(function () {
-        themeToggle.classList.remove("is-spinning");
-      }, 520);
-    });
   }
 
   function onScroll() {

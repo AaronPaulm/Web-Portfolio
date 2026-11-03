@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-bs-theme="light" data-theme="light">
+<html lang="en" data-bs-theme="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,18 +11,7 @@
   <link rel="icon" type="image/png" href="assets/img/Icon.png">
 
   <script>
-    (function () {
-      document.documentElement.classList.add("js");
-      try {
-        var saved = localStorage.getItem("portfolio-theme");
-        var theme = saved === "dark" || saved === "light" ? saved : "light";
-        document.documentElement.setAttribute("data-theme", theme);
-        document.documentElement.setAttribute("data-bs-theme", theme);
-      } catch (error) {
-        document.documentElement.setAttribute("data-theme", "light");
-        document.documentElement.setAttribute("data-bs-theme", "light");
-      }
-    })();
+    document.documentElement.classList.add("js");
   </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -45,10 +34,6 @@
       </a>
 
       <div class="nav-end d-flex align-items-center gap-2 ms-auto ms-lg-0 order-lg-3">
-        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark mode" title="Switch theme">
-          <i class="bi bi-moon-stars-fill icon-moon" aria-hidden="true"></i>
-          <i class="bi bi-sun-fill icon-sun" aria-hidden="true"></i>
-        </button>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
           <span class="toggler-bar"></span>
           <span class="toggler-bar"></span>
@@ -88,6 +73,9 @@
               <div class="hero-actions reveal">
                 <a href="#projects" class="btn btn-accent">
                   View Projects <i class="bi bi-arrow-down-right ms-1"></i>
+                </a>
+                <a href="assets/CV_2026.pdf" class="btn btn-ghost" download="Aaron-Paul-Magdaong-CV.pdf" target="_blank" rel="noopener noreferrer">
+                  Download CV <i class="bi bi-download ms-1"></i>
                 </a>
                 <a href="#contact" class="btn btn-ghost">
                   Get in Touch <i class="bi bi-arrow-down-right ms-1"></i>
@@ -184,6 +172,20 @@
               <div class="fact">
                 <i class="bi bi-pencil-square"></i>
                 <div><span>Design tool</span><strong>Figma</strong></div>
+              </div>
+              <div class="fact">
+                <i class="bi bi-heart"></i>
+                <div><span>Hobbies</span><strong>Gaming, music &amp; design</strong></div>
+              </div>
+            </div>
+
+            <div class="about-hobbies reveal">
+              <h3>Hobbies &amp; interests</h3>
+              <div class="hobby-tags">
+                <span class="tag">Gaming</span>
+                <span class="tag">Music</span>
+                <span class="tag">UI inspiration</span>
+                <span class="tag">Learning</span>
               </div>
             </div>
           </div>
@@ -445,6 +447,7 @@
           <h4>Connect</h4>
           <a href="mailto:aaronpaulmagdaong2@gmail.com">Email</a>
           <a href="https://github.com/AaronPaulM24" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="assets/CV_2026.pdf" download="Aaron-Paul-Magdaong-CV.pdf" target="_blank" rel="noopener noreferrer">Download CV</a>
         </div>
       </div>
 
